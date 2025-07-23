@@ -83,7 +83,7 @@ public class MastodonAPIController{
 				Request.Builder builder=new Request.Builder()
 						.url(req.getURL().toString())
 						.method(req.getMethod(), req.getRequestBody())
-						.header("User-Agent", "MastodonAndroid/"+BuildConfig.VERSION_NAME);
+						.header("User-Agent", "MastodonAndroid/1.0.0");
 
 				String token=null;
 				if(session!=null)

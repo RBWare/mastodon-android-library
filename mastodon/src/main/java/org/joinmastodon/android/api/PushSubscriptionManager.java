@@ -101,7 +101,7 @@ public class PushSubscriptionManager{
 		deviceToken=getPrefs().getString("deviceToken", null);
 		int tokenVersion=getPrefs().getInt("version", 0);
 		long tokenLastRefreshed=getPrefs().getLong("lastRefresh", 0);
-		if(!TextUtils.isEmpty(deviceToken) && tokenVersion==BuildConfig.VERSION_CODE && System.currentTimeMillis()-tokenLastRefreshed<TOKEN_REFRESH_INTERVAL){
+		if(!TextUtils.isEmpty(deviceToken) && System.currentTimeMillis()-tokenLastRefreshed<TOKEN_REFRESH_INTERVAL){
 			registerAllAccountsForPush(false);
 			return;
 		}
@@ -402,7 +402,7 @@ public class PushSubscriptionManager{
 						deviceToken=deviceToken.substring(KID_VALUE.length()+1);
 					getPrefs().edit()
 							.putString("deviceToken", deviceToken)
-							.putInt("version", BuildConfig.VERSION_CODE)
+							.putInt("version", 1)
 							.putLong("lastRefresh", System.currentTimeMillis())
 							.apply();
 					Log.i(TAG, "Successfully registered for FCM");

@@ -5,7 +5,7 @@ plugins {
 
 android {
 	androidResources {
-		generateLocaleConfig = true
+//		generateLocaleConfig = true
 	}
 
 	compileSdk 35
@@ -20,7 +20,7 @@ android {
 	buildTypes {
 		release {
 			minifyEnabled true
-			shrinkResources true
+//			shrinkResources true
 			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 		}
 		debug{
@@ -70,12 +70,12 @@ android {
 		aidl true
 		buildConfig true
 	}
-	dependenciesInfo{
-		// Disables dependency metadata when building APKs.
-		includeInApk false
-		// Disables dependency metadata when building Android App Bundles.
-		includeInBundle false
-	}
+//	dependenciesInfo{
+//		// Disables dependency metadata when building APKs.
+//		includeInApk false
+//		// Disables dependency metadata when building Android App Bundles.
+//		includeInBundle false
+//	}
 	namespace 'org.joinmastodon.android'
 }
 

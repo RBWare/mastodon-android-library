@@ -61,9 +61,9 @@ public class SettingsAboutAppFragment extends BaseSettingsFragment<Void>{
 		versionInfo.setTextAppearance(R.style.m3_label_medium);
 		versionInfo.setTextColor(UiUtils.getThemeColor(getActivity(), R.attr.colorM3Outline));
 		versionInfo.setGravity(Gravity.CENTER);
-		versionInfo.setText(getString(R.string.settings_app_version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE));
+		versionInfo.setText(getString(R.string.settings_app_version, "1.0.0", 1));
 		versionInfo.setOnClickListener(v->{
-			getActivity().getSystemService(ClipboardManager.class).setPrimaryClip(ClipData.newPlainText("", BuildConfig.VERSION_NAME+" ("+BuildConfig.VERSION_CODE+")"));
+			getActivity().getSystemService(ClipboardManager.class).setPrimaryClip(ClipData.newPlainText("", "1.0.0 ("+1+")"));
 			if(Build.VERSION.SDK_INT<=Build.VERSION_CODES.S_V2){
 				new Snackbar.Builder(getActivity())
 						.setText(R.string.app_version_copied)
